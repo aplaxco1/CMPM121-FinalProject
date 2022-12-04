@@ -4,15 +4,29 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    enum State
+    {
+        IDLE,
+        MOVING,
+        JUMPING
+    }
+    State state;
+
     [Header("Movement")]
     [SerializeField] private float moveSpeed;
     [SerializeField] private float airDrag;
-    [SerializeField] private float groundDrag;
+    [SerializeField] private float groundDrag; 
     private Vector3 move;
     private float forwardMovement, sidewaysMovement;
     private bool isGrounded;
     private Vector3 groundCheckBox;
     private Quaternion quat;
+
+    [Header("Jump Stuff")]
+    [SerializeField] private float upPower;
+    [SerializeField] private float forwardPower;
+    [SerializeField] private float jumpBuffer;
+    private float jumpBufferTimer;
 
     [Header("Componenets/Layers")]
     [SerializeField] private Transform groundCheck;
@@ -34,15 +48,71 @@ public class PlayerMovement : MonoBehaviour
     {
         isGrounded = Physics.CheckBox(groundCheck.position, groundCheckBox, quat, groundLayer);
         PlayerInput();
+        
+        /*
         if (Input.GetKeyDown(KeyCode.W))
         {
-            anim.SetInteger("hop", 1);
+            anim.SetTrigger("hopForward");
+        }
+        */
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            jumpBufferTimer = jumpBuffer;
+        }
+        else
+        {
+            if (jumpBufferTimer >= 0)
+            {
+                jumpBufferTimer -= Time.deltaTime;
+            }
         }
     }
 
     private void FixedUpdate()
     {
-        //MovePlayer();
+        ControlDrag();
+        MovePlayer();
+        switch (state)
+        {
+            case State.IDLE:
+                if (move != Vector3.zero)
+                {
+                    state = State.MOVING;
+                    anim.SetTrigger("hopForward");
+                }
+                else if (jumpBufferTimer > 0)
+                {
+                    state = State.JUMPING;
+                    anim.SetBool("flying", true);
+                    Jump();
+                }
+                break;
+
+            case State.MOVING:
+                if (move == Vector3.zero)
+                {
+                    state = State.IDLE;
+                    anim.SetTrigger("idle");
+                }
+                else if (jumpBufferTimer > 0)
+                {
+                    state = State.JUMPING;
+                    Jump();
+                    anim.SetBool("flying", true);
+                }
+                break;
+
+            case State.JUMPING:
+                if (isGrounded)
+                {
+                    state = State.IDLE;
+                    anim.SetBool("flying", false);
+                    anim.SetTrigger("idle");
+                    
+                }
+                break;
+        }
     }
 
     private void PlayerInput()
@@ -70,6 +140,19 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.drag = airDrag;
         }
+    }
 
+    void updateGravity()
+    {
+        if (isGrounded)
+        {
+            
+        }
+    }
+
+    void Jump()
+    {
+        rb.drag = airDrag;
+        rb.AddForce((transform.up * upPower) + (transform.forward * forwardPower), ForceMode.Impulse);
     }
 }
