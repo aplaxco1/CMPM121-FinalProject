@@ -123,6 +123,37 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &208082594
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 208082595}
+  m_Layer: 6
+  m_Name: GroundCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &208082595
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 208082594}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 922773026613007552}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &448585111
 GameObject:
   m_ObjectHideFlags: 0
@@ -2553,6 +2584,7 @@ Transform:
   - {fileID: 922773026613007548}
   - {fileID: 922773026613007558}
   - {fileID: 1736614557}
+  - {fileID: 208082595}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2565,16 +2597,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 922773026612906272}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8331181c2d1f1d547aa9172cc05826bd, type: 3}
+  m_Script: {fileID: 11500000, guid: 563aac90c4bac844e864784e8087708c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 15
   airDrag: 1
   groundDrag: 3
-  upPower: 3
-  forwardPower: 4
+  upPower: 10
+  forwardPower: 10
   jumpBuffer: 0.1
-  groundCheck: {fileID: 922773026613007552}
+  groundCheck: {fileID: 208082595}
   tf: {fileID: 922773026613007552}
   hitbox: {fileID: 922773026613007559}
   rb: {fileID: 922773026613007554}

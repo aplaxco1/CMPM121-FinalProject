@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    enum State
+    public enum State
     {
         IDLE,
         MOVING,
         JUMPING
     }
-    State state;
+    public State state;
 
     [Header("Movement")]
     [SerializeField] private float moveSpeed;
@@ -84,7 +84,7 @@ public class PlayerMovement : MonoBehaviour
                 else if (jumpBufferTimer > 0)
                 {
                     state = State.JUMPING;
-                    anim.SetBool("flying", true);
+                    anim.SetTrigger("flyingTrigger");
                     Jump();
                 }
                 break;
@@ -99,7 +99,7 @@ public class PlayerMovement : MonoBehaviour
                 {
                     state = State.JUMPING;
                     Jump();
-                    anim.SetBool("flying", true);
+                    anim.SetTrigger("flyingTrigger");
                 }
                 break;
 
@@ -107,9 +107,7 @@ public class PlayerMovement : MonoBehaviour
                 if (isGrounded)
                 {
                     state = State.IDLE;
-                    anim.SetBool("flying", false);
-                    anim.SetTrigger("idle");
-                    
+                    anim.SetTrigger("idle");                    
                 }
                 break;
         }
