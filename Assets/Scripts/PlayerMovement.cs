@@ -123,7 +123,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void MovePlayer()
     {
-        print(move.normalized * moveSpeed);
         rb.AddForce(move.normalized * moveSpeed, ForceMode.Acceleration);
     }
 
