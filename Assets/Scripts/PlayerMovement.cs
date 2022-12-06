@@ -36,26 +36,28 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private Animator anim;
 
+    [Header("Sounds")]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip cawSFX;
+    [SerializeField] private AudioClip flySFX;
+    [SerializeField] private float cawCycle;
+    private float cawCycleTimer;
+
 
     private void Start()
     {
         rb.freezeRotation = true;
         groundCheckBox = new Vector3(hitbox.size.x / 2, .1f, hitbox.size.z);
         quat = new Quaternion(0, 0, 0, 0);
+        cawCycleTimer = cawCycle;
     }
 
     private void Update()
     {
         isGrounded = Physics.CheckBox(groundCheck.position, groundCheckBox, quat, groundLayer);
         PlayerInput();
-        
-        /*
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            anim.SetTrigger("hopForward");
-        }
-        */
 
+        //Player jump buffer
         if (Input.GetKeyDown(KeyCode.Space))
         {
             jumpBufferTimer = jumpBuffer;
@@ -66,6 +68,17 @@ public class PlayerMovement : MonoBehaviour
             {
                 jumpBufferTimer -= Time.deltaTime;
             }
+        }
+
+        //Plays caw noise on a constant cycle
+        if (cawCycleTimer <= 0)
+        {
+            audioSource.PlayOneShot(cawSFX);
+            cawCycleTimer = cawCycle;
+        }
+        else
+        {
+            cawCycleTimer -= Time.deltaTime;
         }
     }
 
@@ -86,6 +99,7 @@ public class PlayerMovement : MonoBehaviour
                     state = State.JUMPING;
                     anim.SetTrigger("flyingTrigger");
                     Jump();
+                    audioSource.PlayOneShot(flySFX);
                 }
                 break;
 
@@ -100,6 +114,7 @@ public class PlayerMovement : MonoBehaviour
                     state = State.JUMPING;
                     Jump();
                     anim.SetTrigger("flyingTrigger");
+                    audioSource.PlayOneShot(flySFX);
                 }
                 break;
 
@@ -139,17 +154,9 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    void updateGravity()
-    {
-        if (isGrounded)
-        {
-            
-        }
-    }
-
     void Jump()
     {
         rb.drag = airDrag;
-        rb.AddForce((transform.up * upPower) + (transform.forward * forwardPower), ForceMode.Impulse);
+        rb.AddForce((transform.up * upPower) + (move * forwardPower), ForceMode.Impulse);
     }
 }

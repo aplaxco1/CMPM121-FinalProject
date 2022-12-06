@@ -9,7 +9,7 @@ public class CameraController : MonoBehaviour
     public float sensY;
 
     //Camera objects
-    public Camera cam;
+    public Transform followTarget;
     public Transform rotator;
 
     //Camera input/rotation
@@ -29,7 +29,7 @@ public class CameraController : MonoBehaviour
     {
         MouseInput();
 
-        cam.transform.localRotation = Quaternion.Euler(cam.transform.localEulerAngles - Vector3.right * xRotation);
+        followTarget.transform.localRotation = Quaternion.Euler(followTarget.transform.localEulerAngles - Vector3.right * xRotation);
         rotator.localRotation = Quaternion.Euler(rotator.localEulerAngles + Vector3.up * yRotation);
     }
 
