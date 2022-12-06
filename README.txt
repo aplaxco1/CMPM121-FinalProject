@@ -5,9 +5,10 @@ Group Members: Eduardo Alcaraz, Elizabeth Arnold, Ryan Hueckel, Autumn Plaxco
 DESCRIPTION:
 For this final project, we decided to create a mystery scene where you play as a crow, 
 searching for treasures in an old abandoned graveyard in the middle of a mountain valley. Guided 
-only by the dimly flickering light of a candle, the player can hop and soar around the scene, uncovering a variety of 
-shiny treasures fit for a crow hidden between the old crypts and tombs. When all the treasures are found, it 
-will unlock the hidden secrets of this mysterious graveyard: even more treasure!
+only by the dimly flickering light of a magical floating candle, the player can hop and soar around 
+the scene, uncovering a variety of shiny treasures fit for a crow hidden between the old crypts and 
+tombs. When all the treasures are found, it will unlock the hidden secrets of this mysterious graveyard: 
+even more treasure!
 
 
 VIDEO/EXECUTABLE:
@@ -20,9 +21,10 @@ IMPORTED ASSETS:
 Player Character:
 - Crow Model and Animations - https://assetstore.unity.com/packages/3d/characters/animals/birds/living-birds-15649
 
-Textures/Materials:
+Textures/Materials/VFX:
 - Terrain Textures - https://assetstore.unity.com/packages/2d/textures-materials/terrain-textures-4k-179139
 - Skybox - https://assetstore.unity.com/packages/2d/textures-materials/sky/skybox-series-free-103633#content
+- Particle Effects (Floating Candle) - https://assetstore.unity.com/packages/vfx/particles/dl-fantasy-rpg-effects-68246
 
 Objects:
 - Fences/Gate - https://assetstore.unity.com/packages/3d/environments/medieval-fence-pack-11618#description
