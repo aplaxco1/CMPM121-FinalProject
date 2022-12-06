@@ -32,4 +32,6 @@ Objects:
 - Mausoleum - https://assetstore.unity.com/packages/3d/environments/fantasy/mausoleum-128753
 - Various Assets (Foliage, Tombstones, Benches, Candles, Skulls, Coffins) - https://assetstore.unity.com/packages/3d/environments/fantasy/detailed-halloween-props-vol-1-236945
 - Books, Scrolls, Candles - https://assetstore.unity.com/packages/3d/props/books-scrolls-and-other-things-hdrp-urp-standard-198855
+- Gold Ingots - 
+- Gems - 
 
