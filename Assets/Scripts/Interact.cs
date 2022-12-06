@@ -7,16 +7,21 @@ using UnityEngine;
 public class Interact : MonoBehaviour
 {
     [Header("UI")]
-    [SerializeField] public GameObject numText;
-    public int total = -1;
+    private GameObject numText;
+    private int total = -1;
 
     [Header("Object")]
-    public float floatStrength = 0.25f; 
+    public float floatStrength = 0.2f; 
     float originalY;
 
 
     void Start()
     {
+        GameObject[] pickups;
+        pickups = GameObject.FindGameObjectsWithTag("pickup");
+        numText = GameObject.Find("RemainingNumText");
+        total = pickups.Length;
+
         numText.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = (total).ToString();
         this.originalY = this.transform.position.y + 0.5f;
     }
