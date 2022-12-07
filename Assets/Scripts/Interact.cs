@@ -14,6 +14,8 @@ public class Interact : MonoBehaviour
     public float floatStrength = 0.2f; 
     float originalY;
 
+    public AudioSource audioSource;
+    public AudioClip itemCollect;
 
     void Start()
     {
@@ -24,6 +26,7 @@ public class Interact : MonoBehaviour
 
         numText.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = (total).ToString();
         this.originalY = this.transform.position.y + 0.5f;
+
     }
 
 
@@ -45,6 +48,7 @@ public class Interact : MonoBehaviour
 
     private void OnCollisionEnter(Collision other) {
         //Play sound
+        audioSource.PlayOneShot(itemCollect);
         UpdateItems();
         Destroy(gameObject);
     }

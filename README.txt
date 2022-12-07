@@ -11,9 +11,19 @@ tombs. When all the treasures are found, it will unlock the hidden secrets of th
 even more treasure!
 
 
+ASSIGNMENT REQUIREMENTS:
+- Particle System(s): Floating Candle, Area Fog, Pickup Sparkles
+- Imported Ojects >= 5: See List of Imported Objects Below
+- Controllable Character: Third Person Camera Following Controllable Crow
+- Flickering Light Source: Flickering Floating Candle that Follows Crow
+- 5 Hidden Clues: 2 Gold Ingots and 3 Gems Hidden Throughout Graveyard
+- Event: Treasure Chest is Opened in the Graveyard after 5 Treasures are Found
+
+
 VIDEO/EXECUTABLE:
 Below is a Google Drive link to a video showcasing some of the main elements of our scene, as well
-as two exectutable files which can be downloaded to play the game:
+as an exectutable file which can be downloaded to play the game:
+https://drive.google.com/drive/folders/1CQGopLrASJDYo7nkA6bLmVoimAYd2W6v?usp=sharing
 
 
 IMPORTED ASSETS:
@@ -34,4 +44,5 @@ Objects:
 - Books, Scrolls, Candles - https://assetstore.unity.com/packages/3d/props/books-scrolls-and-other-things-hdrp-urp-standard-198855
 - Gold Ingots - https://assetstore.unity.com/packages/3d/props/medieval-gold-14162#content
 - Gems - https://assetstore.unity.com/packages/3d/props/sets-gems-19902
+- Treasure Chest - https://assetstore.unity.com/packages/3d/props/interior/treasure-set-free-chest-72345
 
