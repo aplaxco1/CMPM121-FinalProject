@@ -13,17 +13,17 @@ even more treasure!
 
 ASSIGNMENT REQUIREMENTS:
 - Particle System(s): Floating Candle, Area Fog, Pickup Sparkles
-- Imported Ojects >= 5: See List of Imported Objects Below
+- Imported Ojects: See List of Imported Objects Below
 - Controllable Character: Third Person Camera Following Controllable Crow
 - Flickering Light Source: Flickering Floating Candle that Follows Crow
 - 5 Hidden Clues: 2 Gold Ingots and 3 Gems Hidden Throughout Graveyard
-- Event: Treasure Chest is Opened in the Graveyard after 5 Treasures are Found
+- Event: Treasure Chest is Opened in the Graveyard after 6 Treasures are Found
 
 
 VIDEO/EXECUTABLE:
 Below is a Google Drive link to a video showcasing some of the main elements of our scene, as well
 as an exectutable file which can be downloaded to play the game:
-https://drive.google.com/drive/folders/1CQGopLrASJDYo7nkA6bLmVoimAYd2W6v?usp=sharing
+(paste link here)
 
 
 IMPORTED ASSETS:
@@ -34,7 +34,8 @@ Player Character:
 Textures/Materials/VFX:
 - Terrain Textures - https://assetstore.unity.com/packages/2d/textures-materials/terrain-textures-4k-179139
 - Skybox - https://assetstore.unity.com/packages/2d/textures-materials/sky/skybox-series-free-103633#content
-- Particle Effects (Floating Candle) - https://assetstore.unity.com/packages/vfx/particles/dl-fantasy-rpg-effects-68246
+- Floating Candle Particle Effect - https://assetstore.unity.com/packages/vfx/particles/dl-fantasy-rpg-effects-68246
+- Fire Particle Effect - https://assetstore.unity.com/packages/vfx/particles/fire-explosions/procedural-fire-141496
 
 Objects:
 - Fences/Gate - https://assetstore.unity.com/packages/3d/environments/medieval-fence-pack-11618#description
