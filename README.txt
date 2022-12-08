@@ -3,12 +3,7 @@ Group Members: Eduardo Alcaraz, Elizabeth Arnold, Ryan Hueckel, Autumn Plaxco
 
 
 DESCRIPTION:
-For this final project, we decided to create a mystery scene where you play as a crow, 
-searching for treasures in an old abandoned graveyard in the middle of a mountain valley. Guided 
-only by the dimly flickering light of a magical floating candle, the player can hop and soar around 
-the scene, uncovering a variety of shiny treasures fit for a crow hidden between the old crypts and 
-tombs. When all the treasures are found, it will unlock the hidden secrets of this mysterious graveyard: 
-even more treasure!
+For this final project, we decided to create a mystery scene where you play as a crow, searching for treasures in an old abandoned graveyard in the middle of a mountain valley. Guided only by the dimly flickering light of a magical floating candle, the player can hop and soar around the scene, uncovering a variety of shiny treasures fit for a crow hidden between the old crypts and tombs. When all the treasures are found, it will unlock the hidden secrets of this mysterious graveyard: even more treasure!
 
 
 ASSIGNMENT REQUIREMENTS:
@@ -21,9 +16,8 @@ ASSIGNMENT REQUIREMENTS:
 
 
 VIDEO/EXECUTABLE:
-Below is a Google Drive link to a video showcasing some of the main elements of our scene, as well
-as an exectutable file which can be downloaded to play the game:
-(paste link here)
+Below is a Google Drive link to a video showcasing some of the main elements of our scene, as well as an exectutable file which can be downloaded to play the game:
+https://drive.google.com/drive/folders/1lcpIou0x_spMn7I60001M2P67gfwoTwh?usp=share_link
 
 
 IMPORTED ASSETS:

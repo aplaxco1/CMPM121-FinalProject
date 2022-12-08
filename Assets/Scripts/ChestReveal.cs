@@ -11,7 +11,6 @@ public class ChestReveal : MonoBehaviour
     void Start()
     {
         openChest.SetActive(false);
-        
     }
 
     // Update is called once per frame

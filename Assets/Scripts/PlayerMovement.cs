@@ -84,16 +84,19 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        //Player state machine
         ControlDrag();
         MovePlayer();
         switch (state)
         {
             case State.IDLE:
+                //Players is starting to move
                 if (move != Vector3.zero)
                 {
                     state = State.MOVING;
                     anim.SetTrigger("hopForward");
                 }
+                //Player is starting to jump
                 else if (jumpBufferTimer > 0)
                 {
                     state = State.JUMPING;
@@ -104,11 +107,13 @@ public class PlayerMovement : MonoBehaviour
                 break;
 
             case State.MOVING:
+                //Players stopping moving
                 if (move == Vector3.zero)
                 {
                     state = State.IDLE;
                     anim.SetTrigger("idle");
                 }
+                //Player is starting to jump
                 else if (jumpBufferTimer > 0)
                 {
                     state = State.JUMPING;
@@ -119,6 +124,7 @@ public class PlayerMovement : MonoBehaviour
                 break;
 
             case State.JUMPING:
+                //player is back on ground
                 if (isGrounded)
                 {
                     state = State.IDLE;
@@ -130,6 +136,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void PlayerInput()
     {
+        //reads in player movement
         sidewaysMovement = Input.GetAxisRaw("Horizontal");
         forwardMovement = Input.GetAxisRaw("Vertical");
         move = tf.forward * forwardMovement + tf.right * sidewaysMovement;
